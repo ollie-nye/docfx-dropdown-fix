@@ -1,4 +1,4 @@
-# Dropdown Navbar Fix - Steps to reproduce
+# Dropdown Navbar Fix - Steps to reproduce the fix
 
 1.  Download https://github.com/dotnet/docfx/releases/download/v2.37.2/docfx.zip
 2.  Extract docfx.zip
