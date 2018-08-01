@@ -18,7 +18,10 @@
         topicHref: /ghi
     ```
 6.  Run `docfx template export default` to get the default template out of DocFX
-7.  Replace the contents of `./custom_template/partials/li.html.tmpl` with:
+7.  Move `./_exported_templates/default` to `./custom_template`
+8.  Remove `./_exported_templates`
+9.  Change `docfx.json -> [build][template]` from `'default'` to `'custom_template'`
+10. Replace the contents of `./custom_template/partials/li.html.tmpl` with:
 
     ```html
     <ul class="nav level{{level}}">
@@ -50,14 +53,14 @@
     {{/items}}
     </ul>
     ```
-8.  Create `./custom_template/partials/dd-li.html.tmpl` and add:
+11. Create `./custom_template/partials/dd-li.html.tmpl` and add:
 
     ```html
     {{#items}}
       <li><a href="{{topicHref}}">{{name}}</a></li>
     {{/items}}
     ```
-9.  Stop active navbar items showing on the homepage with `./custom_template/styles/docfx.js`, replacing line 394:
+12. Stop active navbar items showing on the homepage with `./custom_template/styles/docfx.js`, replacing line 394:
 
     ```js
     $(e).addClass(active);
@@ -71,4 +74,4 @@
     }
     ```
 
-10. Start site serve with `docfx docfx.json --serve`
+13. Start site serve with `docfx docfx.json --serve`
